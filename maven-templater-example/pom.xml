@@ -5,7 +5,43 @@
     <groupId>com.jag.maven-templater</groupId>
     <artifactId>maven-templater-example</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
+
+    <scm>
+        <connection>scm:git:git@github.com:ggear/maven-templater.git</connection>
+        <url>scm:git:git@github.com:ggear/maven-templater.git</url>
+        <developerConnection>scm:git:git@github.com:ggear/maven-templater.git</developerConnection>
+        <tag>maven-templater-0.7.8</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>cloudera-framework-releases</id>
+            <url>http://52.63.86.162:80/artifactory/cloudera-framework-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>cloudera-framework-snapshots</id>
+            <url>http://52.63.86.162:80/artifactory/cloudera-framework-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/content/groups/cloudera-repos</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <properties>
         <scala.version>2.11.8</scala.version>
