@@ -19,8 +19,8 @@ To perform a release:
 
 ```bash
 # Change the following variables to appropriate values for your target release
-export MT_VERSION_RELEASE=1.0.5
-export MT_VERSION_HEAD=1.0.6
+export MT_VERSION_RELEASE=1.0.6
+export MT_VERSION_HEAD=1.0.5
 mvn release:prepare -B -DreleaseVersion=$MT_VERSION_RELEASE -DdevelopmentVersion=$MT_VERSION_HEAD-SNAPSHOT
 mvn release:perform
 git commit -m "[maven-release-plugin] prepare for next development iteration"
