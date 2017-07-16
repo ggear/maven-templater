@@ -11,7 +11,7 @@
         <connection>scm:git:git@github.com:ggear/maven-templater.git</connection>
         <url>scm:git:git@github.com:ggear/maven-templater.git</url>
         <developerConnection>scm:git:git@github.com:ggear/maven-templater.git</developerConnection>
-        <tag>maven-templater-0.7.8</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
