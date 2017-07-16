@@ -65,7 +65,7 @@ val tokensString = tokensProcessed.mkString(",")
 tokensString
 
 //
-// Test the result
+// Templater the result
 if (tokens.asScala.mkString(",") != tokensString) throw new AssertionError("Expected [" + tokens.asScala.mkString(",") + "] but got [" + tokensString + "]")
 //
 

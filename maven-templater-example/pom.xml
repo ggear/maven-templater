@@ -108,6 +108,7 @@
                                     <outputDirectory>${project.build.directory}/templater-assembly</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
+                            <includes>**/*.properties</includes>
                         </configuration>
                     </execution>
                 </executions>
@@ -187,6 +188,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
