@@ -39,7 +39,7 @@ import scala.collection.mutable.ListBuffer
 //${TEMPLATE.PRE-PROCESSOR.OPEN}
 
 // Provide example parameters
-var tokens = new java.util.ArrayList[String]()
+val tokens = new java.util.ArrayList[String]()
 tokens.add("1")
 tokens.add("2")
 tokens.add("3")

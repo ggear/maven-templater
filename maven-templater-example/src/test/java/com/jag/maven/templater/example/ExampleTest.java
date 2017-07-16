@@ -10,7 +10,7 @@ public class ExampleTest {
 
   @Test
   public void test() {
-    assertEquals("1,2,3", Example.example(Arrays.asList(new String[]{"1", "2", "3"})));
+    assertEquals("1,2,3", Example.example(Arrays.asList("1", "2", "3")));
   }
 
 }
