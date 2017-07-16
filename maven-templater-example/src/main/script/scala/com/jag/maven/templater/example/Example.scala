@@ -18,7 +18,6 @@ or library for ease of editing.
 */
 
 /***IGNORE LIBRARY BOILERPLATE - START**
-
 package com.jag.maven.templater.example
 
 import java.util
@@ -26,7 +25,6 @@ import java.util
 object Example {
 
   def example(tokens: util.List[String]): String = {
-
 **IGNORE LIBRARY BOILERPLATE - FINISH***/
 
 import java.io.StringReader
@@ -37,13 +35,11 @@ import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
 
 //
-
 // Provide example parameters
 val tokens = new java.util.ArrayList[String]()
 tokens.add("1")
 tokens.add("2")
 tokens.add("3")
-
 //
 
 /****
@@ -59,8 +55,6 @@ CSVFormat.RFC4180.parse(new StringReader(tokens.asScala.mkString(","))).asScala.
 tokensProcessed.mkString(",")
 
 /***IGNORE LIBRARY BOILERPLATE - START**
-
   }
 }
-
 **IGNORE LIBRARY BOILERPLATE - FINISH***/
