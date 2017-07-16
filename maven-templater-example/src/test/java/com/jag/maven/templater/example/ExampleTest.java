@@ -9,7 +9,7 @@ import org.junit.Test;
 public class ExampleTest {
 
   @Test
-  public void test() {
+  public void testLibrary() {
     assertEquals("1,2,3", Example.example(Arrays.asList("1", "2", "3")));
   }
 
