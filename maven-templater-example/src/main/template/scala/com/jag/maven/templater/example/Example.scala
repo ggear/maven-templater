@@ -1,20 +1,19 @@
-/**
-  * ${TEMPLATE.PRE-PROCESSOR.RAW_TEMPLATE}
-  *
-  * This file is in the ${TEMPLATE.PRE-PROCESSOR.STATE} pre-processed state with template available by the
-  * same file name and package under the following directory:
-  *
-  * ${project.basedir}/src/main/template
-  *
-  * When editing the template directly (as indicated by the presence of the
-  * ${TEMPLATE.PRE-PROCESSOR.*} tag at the top of this file), care should be
-  * taken to ensure the maven-resources-plugin generate-sources filtering of
-  * the ${TEMPLATE.PRE-PROCESSOR.*} tags, which comment and or uncomment blocks
-  * of the template, leave the file in a consistent state post filtering. It is
-  * desirable that in template form the file remains runnable and or compilable
-  * in at least one form (ie script or library) for ease of editing.
-  *
-  **/
+/*
+    ${TEMPLATE.PRE-PROCESSOR.RAW_TEMPLATE}
+
+    This file is in the ${TEMPLATE.PRE-PROCESSOR.STATE} pre-processed state with template available by the
+    same file name and package under the following directory:
+
+    ${project.basedir}/src/main/template
+
+    When editing the template directly (as indicated by the presence of the
+    ${TEMPLATE.PRE-PROCESSOR.*} tag at the top of this file), care should be
+    taken to ensure the maven-resources-plugin generate-sources filtering of
+    the ${TEMPLATE.PRE-PROCESSOR.*} tags, which comment and or uncomment blocks
+    of the template, leave the file in a consistent state post filtering. It is
+    desirable that in template form the file remains runnable and or compilable
+    in at least one form (ie script or library) for ease of editing.
+*/
 
 /*
 %AddJar https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/${commonscsv.version}/commons-csv-${commonscsv.version}.jar
