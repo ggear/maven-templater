@@ -5,7 +5,7 @@
     <groupId>com.jag</groupId>
     <artifactId>maven-templater</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
 
     <prerequisites>
         <maven>3.3</maven>
