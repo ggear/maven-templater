@@ -1,4 +1,5 @@
-/*${TEMPLATE.PRE-PROCESSOR.SPACER}
+/*
+${TEMPLATE.PRE-PROCESSOR.SPACER}
 ${TEMPLATE.PRE-PROCESSOR.RAW_TEMPLATE}
 
 This file is in the ${TEMPLATE.PRE-PROCESSOR.STATE} pre-processed state with template available by the
@@ -18,13 +19,15 @@ from then on the template can be used for direct editing and distribution via
 the source code control system.
 
 The library can be tested during the standard maven compile and test phases.
-${TEMPLATE.PRE-PROCESSOR.SPACER}*/
+${TEMPLATE.PRE-PROCESSOR.SPACER}
+*/
 
 /*
 %AddJar https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/${commonscsv.version}/commons-csv-${commonscsv.version}.jar
 */
 
-/*${TEMPLATE.PRE-PROCESSOR.UNCLOSE}
+/*
+${TEMPLATE.PRE-PROCESSOR.UNCLOSE}
 
 package com.jag.maven.templater.example
 
@@ -34,7 +37,8 @@ object Example {
 
   def example(tokens: util.List[String]): String = {
 
-${TEMPLATE.PRE-PROCESSOR.UNOPEN}*/
+${TEMPLATE.PRE-PROCESSOR.UNOPEN}
+*/
 
 import java.io.StringReader
 
@@ -51,11 +55,13 @@ tokens.add("2")
 tokens.add("3")
 //${TEMPLATE.PRE-PROCESSOR.CLOSE}
 
-/*${TEMPLATE.PRE-PROCESSOR.SPACER}
+/*
+${TEMPLATE.PRE-PROCESSOR.SPACER}
 A silly example that takes a Java List of Strings, forms a single CSV of them,
 then parses each String out again using CSVFormat and then finally builds
 and returns a new CSV String from the tokens - I told you it was silly!
-${TEMPLATE.PRE-PROCESSOR.SPACER}*/
+${TEMPLATE.PRE-PROCESSOR.SPACER}
+*/
 
 val tokensProcessed = ListBuffer[String]()
 CSVFormat.RFC4180.parse(new StringReader(tokens.asScala.mkString(","))).asScala.foreach { record =>
@@ -69,9 +75,11 @@ tokensString
 if (tokens.asScala.mkString(",") != tokensString) throw new AssertionError("Expected [" + tokens.asScala.mkString(",") + "] but got [" + tokensString + "]")
 //${TEMPLATE.PRE-PROCESSOR.CLOSE}
 
-/*${TEMPLATE.PRE-PROCESSOR.UNCLOSE}
+/*
+${TEMPLATE.PRE-PROCESSOR.UNCLOSE}
 
   }
 }
 
-${TEMPLATE.PRE-PROCESSOR.UNOPEN}*/
+${TEMPLATE.PRE-PROCESSOR.UNOPEN}
+*/
