@@ -13,3 +13,4 @@ buildNumber.properties
 .idea
 *.iml
 .pydevproject
+maven-templater-example/src/main/scala/*
