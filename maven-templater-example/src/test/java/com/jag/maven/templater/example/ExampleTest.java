@@ -3,7 +3,6 @@ package com.jag.maven.templater.example;
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 import org.junit.Test;
