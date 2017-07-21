@@ -5,12 +5,12 @@
     <groupId>com.jag.maven-templater</groupId>
     <artifactId>maven-templater-assembly</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.7</version>
+    <version>1.0.8-SNAPSHOT</version>
 
     <parent>
         <groupId>com.jag</groupId>
         <artifactId>maven-templater</artifactId>
-        <version>1.0.7</version>
+        <version>1.0.8-SNAPSHOT</version>
     </parent>
 
 </project>
