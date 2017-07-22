@@ -73,7 +73,6 @@
             <groupId>com.jag.maven-templater</groupId>
             <artifactId>maven-templater-assembly</artifactId>
             <version>${project.version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
