@@ -26,7 +26,7 @@ class ScriptUtilTest extends FlatSpec with Matchers {
     assert(
       ScriptUtil.getDepJar("com.jag.maven-templater", "maven-templater-example", "1.0.8-SNAPSHOT", "jar-with-dependencies", "http://52.63.86.162/artifactory/cloudera-framework-releases", "http://52.63.86.162/artifactory/cloudera-framework-snapshots")
         ==
-        "http://52.63.86.162/artifactory/cloudera-framework-snapshots/com/jag/maven-templater/maven-templater-example/1.0.8-SNAPSHOT/maven-templater-example-1.0.8-20170722.080436-4-jar-with-dependencies.jar"
+        "http://52.63.86.162/artifactory/cloudera-framework-snapshots/com/jag/maven-templater/maven-templater-example/1.0.8-SNAPSHOT/maven-templater-example-1.0.8-20170722.083039-5-jar-with-dependencies.jar"
     )
   }
 

@@ -51,7 +51,6 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>3.2.2</version>
                 <configuration>
                     <scalaVersion>${scala.complete.version}</scalaVersion>
                     <scalaCompatVersion>${scala.minor.version}</scalaCompatVersion>
@@ -82,7 +81,6 @@
             <plugin>
                 <groupId>org.scalatest</groupId>
                 <artifactId>scalatest-maven-plugin</artifactId>
-                <version>1.0</version>
                 <executions>
                     <execution>
                         <id>test</id>
