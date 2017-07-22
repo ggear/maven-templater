@@ -44,7 +44,7 @@
     </repositories>
 
     <properties>
-        <templater.version>1.0.8</templater.version>
+        <templater.version>${project.version}</templater.version>
         <commonscsv.version>1.4</commonscsv.version>
         <junit.version>4.12</junit.version>
         <scala.minor.version>2.11</scala.minor.version>
