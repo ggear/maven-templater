@@ -24,8 +24,7 @@ public class ExampleTest {
     return new ProcessBuilder(Arrays.asList(
       "scala",
       "-cp",
-      System.getProperty("surefire.test.class.path") == null ? System.getProperty("java.class.path") : System.getProperty("java.class.path"),
-      script)
+      System.getProperty("surefire.test.class.path") == null ? System.getProperty("java.class.path") : System.getProperty("java.class.path"), script)
     ).start().waitFor();
   }
 

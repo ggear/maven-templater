@@ -23,7 +23,7 @@ The library can be tested during the standard maven compile and test phases.
 */
 
 /*
-%AddJar https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/1.4/commons-csv-1.4.jar
+%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.0.8/maven-templater-assembly-1.0.8.jar
 */
 
 /*
@@ -40,14 +40,34 @@ object Example {
 **IGNORE LIBRARY BOILERPLATE - FINISH**
 */
 
+// TODO: Inject into target copy of script before execution
+object kernel { object magics { def addJar(dep:String): Unit = {} }}
+
 import java.io.StringReader
 
+import com.jag.maven.templater.ScriptUtil
 import org.apache.commons.csv.CSVFormat
 
 import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
 
 //
+// Add dependencies dynamically
+//
+//@formatter:off
+kernel.magics.addJar(
+ScriptUtil.getDepJar(
+  "com.jag.maven-templater",
+  "maven-templater-example",
+  "1.0.9-SNAPSHOT",
+  "jar-with-dependencies",
+  "http://52.63.86.162/artifactory/cloudera-framework-releases",
+  "http://52.63.86.162/artifactory/cloudera-framework-snapshots"
+)
+//
+    + " -f")
+//@formatter:on
+
 // Provide example parameters
 val tokens = new java.util.ArrayList[String]()
 tokens.add("1")

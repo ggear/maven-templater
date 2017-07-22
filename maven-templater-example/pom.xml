@@ -44,29 +44,32 @@
     </repositories>
 
     <properties>
-        <scala.version>2.11.8</scala.version>
-        <junit.version>4.12</junit.version>
+        <templater.version>1.0.8</templater.version>
         <commonscsv.version>1.4</commonscsv.version>
+        <junit.version>4.12</junit.version>
+        <scala.minor.version>2.11</scala.minor.version>
+        <scala.complete.version>${scala.minor.version}.8</scala.complete.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
 
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
+            <version>${scala.complete.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scalap</artifactId>
-            <version>${scala.version}</version>
+            <version>${scala.complete.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-compiler</artifactId>
-            <version>${scala.version}</version>
+            <version>${scala.complete.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -177,8 +180,8 @@
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
                 <configuration>
-                    <scalaVersion>2.11.8</scalaVersion>
-                    <scalaCompatVersion>2.11</scalaCompatVersion>
+                    <scalaVersion>${scala.complete.version}</scalaVersion>
+                    <scalaCompatVersion>${scala.minor.version}</scalaCompatVersion>
                     <javacArgs>
                         <javacArg>-source</javacArg>
                         <javacArg>${java.version}</javacArg>

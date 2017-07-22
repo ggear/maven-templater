@@ -14,6 +14,11 @@ class ScriptUtilTest extends FlatSpec with Matchers {
 
   "A released dependency, without classifier" should "be resolvable" in {
     assert(
+      ScriptUtil.getDepJar("org.apache.commons", "commons-csv", "1.4", "", "https://repo1.maven.org/maven2", "https://repo1.maven.org/maven2")
+        ==
+        "https://repo1.maven.org/maven2/org/apache/commons/commons-csv/1.4/commons-csv-1.4.jar"
+    )
+    assert(
       ScriptUtil.getDepJar("com.jag.maven-templater", "maven-templater-assembly", "1.0.7", "", "http://52.63.86.162/artifactory/cloudera-framework-releases", "http://52.63.86.162/artifactory/cloudera-framework-snapshots")
         ==
         "http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.0.7/maven-templater-assembly-1.0.7.jar"

@@ -23,7 +23,7 @@ ${TEMPLATE.PRE-PROCESSOR.SPACER}
 */
 
 /*
-%AddJar https://repo.maven.apache.org/maven2/org/apache/commons/commons-csv/${commonscsv.version}/commons-csv-${commonscsv.version}.jar
+%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/${templater.version}/maven-templater-assembly-${templater.version}.jar
 */
 
 /*
@@ -40,14 +40,30 @@ object Example {
 ${TEMPLATE.PRE-PROCESSOR.UNOPEN}
 */
 
+// TODO: Inject into target copy of script before execution
+object kernel { object magics { def addJar(dep:String): Unit = {} }}
+
 import java.io.StringReader
 
+import com.jag.maven.templater.ScriptUtil
 import org.apache.commons.csv.CSVFormat
 
 import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
 
 //${TEMPLATE.PRE-PROCESSOR.OPEN}
+// Add dependencies dynamically
+//${TEMPLATE.PRE-PROCESSOR.ADDJAROPEN}
+ScriptUtil.getDepJar(
+  "com.jag.maven-templater",
+  "maven-templater-example",
+  "${project.version}",
+  "jar-with-dependencies",
+  "http://52.63.86.162/artifactory/cloudera-framework-releases",
+  "http://52.63.86.162/artifactory/cloudera-framework-snapshots"
+)
+//${TEMPLATE.PRE-PROCESSOR.ADDJARCLOSE}
+
 // Provide example parameters
 val tokens = new java.util.ArrayList[String]()
 tokens.add("1")
