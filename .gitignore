@@ -13,4 +13,5 @@ buildNumber.properties
 .idea
 *.iml
 .pydevproject
+.oracle_jre_usage
 maven-templater-example/src/main/scala/com/jag/maven/templater/example/Example.scala
