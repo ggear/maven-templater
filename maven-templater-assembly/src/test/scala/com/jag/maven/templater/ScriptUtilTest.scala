@@ -4,7 +4,15 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class ScriptUtilTest extends FlatSpec with Matchers {
 
-  "released, sans classifier, jar" should "be resolvable" in {
+  "A released dependency, with classifier" should "be resolvable" in {
+    assert(
+      ScriptUtil.getDepJar("com.jag.maven-templater", "maven-templater-example", "1.0.8", "jar-with-dependencies", "http://52.63.86.162/artifactory/cloudera-framework-releases", "http://52.63.86.162/artifactory/cloudera-framework-snapshots")
+        ==
+        "http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-example/1.0.8/maven-templater-example-1.0.8-jar-with-dependencies.jar"
+    )
+  }
+
+  "A released dependency, without classifier" should "be resolvable" in {
     assert(
       ScriptUtil.getDepJar("com.jag.maven-templater", "maven-templater-assembly", "1.0.7", "", "http://52.63.86.162/artifactory/cloudera-framework-releases", "http://52.63.86.162/artifactory/cloudera-framework-snapshots")
         ==
@@ -22,7 +30,7 @@ class ScriptUtilTest extends FlatSpec with Matchers {
     )
   }
 
-  "snapshot, with classifier, jar" should "be resolvable" in {
+  "A snapshot dependency, with classifier" should "be resolvable" in {
     assert(
       ScriptUtil.getDepJar("com.jag.maven-templater", "maven-templater-example", "1.0.8-SNAPSHOT", "jar-with-dependencies", "http://52.63.86.162/artifactory/cloudera-framework-releases", "http://52.63.86.162/artifactory/cloudera-framework-snapshots")
         ==
