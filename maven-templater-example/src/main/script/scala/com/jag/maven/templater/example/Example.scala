@@ -43,6 +43,7 @@ object Example {
 import java.io.StringReader
 
 import com.jag.maven.templater.ScriptUtil
+import com.jag.maven.templater.example.ExampleUtil
 
 import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
@@ -84,10 +85,10 @@ and returns a new CSV String from the tokens - I told you it was silly!
 */
 
 val tokensProcessed = ListBuffer[String]()
-CSVFormat.RFC4180.parse(new StringReader(tokens.asScala.mkString(","))).asScala.foreach { record =>
+CSVFormat.RFC4180.parse(new StringReader(tokens.asScala.mkString(ExampleUtil.Delimiter))).asScala.foreach { record =>
   record.asScala.foreach { token => tokensProcessed += token }
 }
-val tokensString = tokensProcessed.mkString(",")
+val tokensString = tokensProcessed.mkString(ExampleUtil.Delimiter)
 tokensString
 
 //
