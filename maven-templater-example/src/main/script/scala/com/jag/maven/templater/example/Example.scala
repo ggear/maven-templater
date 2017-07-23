@@ -1,6 +1,6 @@
 /*
 ***
-# **PRE-PROCESSED SCRIPT - DO NOT EDIT**
+# **PRE-PROCESSED SCRIPT - EDITS WILL BE CLOBBERED BY MAVEN BUILD**
 
 This file is in the *SCRIPT* pre-processed state with template available by the
 same package and file name under the modules src/main/template directory.
@@ -9,7 +9,7 @@ When editing the template directly (as indicated by the presence of the
 TEMPLATE.PRE-PROCESSOR.RAW_TEMPLATE tag at the top of this file), care should
 be taken to ensure the maven-resources-plugin generate-sources filtering of the
 TEMPLATE.PRE-PROCESSOR tags, which comment and or uncomment blocks of the
-template, leave the file in a consistent state post filtering.
+template, leave the file in a consistent state, as a script ot library, post filtering.
 
 It is desirable that in template form, the file remains both compilable and
 runnable as a script in your IDEs (eg Eclipse, IntelliJ, CDSW etc). To setup
@@ -19,6 +19,10 @@ from then on the template can be used for direct editing and distribution via
 the source code control system.
 
 The library can be tested during the standard maven compile and test phases.
+
+Note that pre-processed files will be overwritten as part of the Maven build
+process. Care should be taken to either ignore and not edit these files (eg
+libraries) or check them in and note changes post Maven build (eg scripts)
 ***
 */
 
@@ -40,14 +44,14 @@ object Example {
 **IGNORE LIBRARY BOILERPLATE - FINISH**
 */
 
-import com.jag.maven.templater.ScriptUtil
+import com.jag.maven.templater.TemplaterUtil
 
 //
 // Add dependencies dynamically
 //
 //@formatter:off
 kernel.magics.addJar(
-ScriptUtil.getDepJar(
+TemplaterUtil.getDepJar(
   "com.jag.maven-templater", "maven-templater-example", "1.1.1-SNAPSHOT", "jar-with-dependencies",
   "http://52.63.86.162/artifactory/cloudera-framework-releases",
   "http://52.63.86.162/artifactory/cloudera-framework-snapshots")

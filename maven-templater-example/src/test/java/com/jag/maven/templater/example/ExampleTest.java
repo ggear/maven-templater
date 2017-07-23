@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-import com.jag.maven.templater.ScriptUtil;
+import com.jag.maven.templater.TemplaterUtil;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
@@ -21,11 +21,10 @@ public class ExampleTest {
 
   @Test
   public void testScalaScript() throws IOException, InterruptedException {
-    String file = "Example.scala";
-    String directory = "src/main/script/scala/com/jag/maven/templater/example";
     StringBuffer output = new StringBuffer();
-    int exit = ScriptUtil.executeScriptScala(file, directory, "target/test-script/scala", output);
-    LOG.info("Executing [" + new File(directory,  file).toString() + "]:\n" + output.toString());
+    int exit = TemplaterUtil.executeScriptScala(scala.Option.apply(null), new File("src/main/script/scala/com/jag/maven/templater/example/Example.scala"),
+      scala.Option.apply(null), new File("target/test-script/scala"), scala.Option.apply(null), scala.Option.apply(output));
+    LOG.info(output.toString());
     assertEquals(0, exit);
   }
 

@@ -6,8 +6,9 @@ A module to use the Maven resource plugin filtering as a naive script and librar
 
 To compile, build and package from source, this project requires:
 
-* JDK 1.8
 * Maven 3
+* JDK 1.8
+* Scala 2.11
 
 ## Usage
 
@@ -19,8 +20,8 @@ To perform a release:
 
 ```bash
 # Change the following variables to appropriate values for your target release
-export MT_VERSION_RELEASE=1.1.0
-export MT_VERSION_HEAD=1.1.1
+export MT_VERSION_RELEASE=1.1.1
+export MT_VERSION_HEAD=1.1.2
 mvn release:prepare -B -DreleaseVersion=$MT_VERSION_RELEASE -DdevelopmentVersion=$MT_VERSION_HEAD-SNAPSHOT
 mvn release:perform
 git push --all
