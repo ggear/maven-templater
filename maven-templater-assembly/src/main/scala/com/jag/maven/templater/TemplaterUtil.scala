@@ -13,7 +13,8 @@ object TemplaterUtil {
 
   def getDepJar(group: String, artifact: String, version: String, classifier: String, releaseRepo: String, snapshotRepo: String): String = {
     val jarNames = ArrayBuffer.empty[String]
-    val baseUrl = (if (version.endsWith("SNAPSHOT")) snapshotRepo else releaseRepo) + "/" + group.replace(".", "/") + "/" + artifact + "/" + version
+    val baseUrl = (if (version.endsWith("SNAPSHOT")) snapshotRepo else releaseRepo) + "/" + group.replace(".", "/") + "/" + artifact +
+      "/" + version
     if (version.endsWith("SNAPSHOT"))
       control.Exception.ignoring(classOf[Exception]) {
         """<a href="(.*)">""".r.findAllIn(Source.fromURL(baseUrl).mkString).toList.map(anchor =>
@@ -24,15 +25,19 @@ object TemplaterUtil {
       (if (classifier == null || classifier == "") "" else "-" + classifier) + ".jar")
   }
 
-  def executeScriptScala(environment: Option[collection.Map[String, String]], file: File, parameters: Option[collection.Seq[String]], working: File,
+  def executeScriptScala(environment: Option[collection.Map[String, String]], file: File, parameters: Option[collection.Seq[String]],
+                         working: File,
                          preamble: Option[String], output: Option[StringBuffer]): Int = {
-    var classpath = if (System.getProperty("surefire.test.class.path") == null) System.getProperty("java.class.path") else System.getProperty("java.class.path")
+    var classpath = if (System.getProperty("surefire.test.class.path") == null) System.getProperty("java.class.path") else System
+      .getProperty("java.class.path")
     classpath = if (classpath != null) classpath.replace(" ", "\\ ") else ""
-    executeScript(List("scala", "-cp", classpath, working.getAbsolutePath + File.separator + file.getName) ++ parameters.getOrElse(List.empty), environment,
+    executeScript(List("scala", "-cp", classpath, working.getAbsolutePath + File.separator + file.getName) ++ parameters.getOrElse(List
+      .empty), environment,
       file, working, Some(PREAMBLE_SCALA + preamble.getOrElse("")), output)
   }
 
-  def executeScriptPython(environment: Option[collection.Map[String, String]], file: File, parameters: Option[collection.Seq[String]], working: File,
+  def executeScriptPython(environment: Option[collection.Map[String, String]], file: File, parameters: Option[collection.Seq[String]],
+                          working: File,
                           preamble: Option[String], output: Option[StringBuffer]): Int = {
     executeScript(List("python", working.getAbsolutePath + File.separator + file.getName) ++ parameters.getOrElse(List.empty),
       environment, file, working, preamble, output)
@@ -53,7 +58,8 @@ object TemplaterUtil {
     val process = processBuilder.start()
     process.getOutputStream.close()
     val exit = process.waitFor
-    if (output.isDefined) output.get.append(command.mkString(" ")).append(":\n").append(Source.fromInputStream(process.getInputStream).mkString)
+    if (output.isDefined) output.get.append(command.mkString(" ")).append(":\n").append(Source.fromInputStream(process.getInputStream)
+      .mkString)
     exit
   }
 

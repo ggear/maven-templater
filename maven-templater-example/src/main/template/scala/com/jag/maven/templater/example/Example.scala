@@ -32,7 +32,8 @@ ${TEMPLATE.PRE-PROCESSOR.SPACER}
 // to a SNAPSHOT, timestamped version. If you are looking for an example, best
 // to checkout a release, https://github.com/ggear/maven-templater/releases
 /*
-%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/${templater.version}/maven-templater-assembly-${templater.version}.jar
+%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/${templater
+.version}/maven-templater-assembly-${templater.version}.jar
 */
 
 /*
@@ -92,7 +93,8 @@ tokensString
 
 //${TEMPLATE.PRE-PROCESSOR.OPEN}
 // Test the result
-if (tokens.asScala.mkString(",") != tokensString) throw new AssertionError("Expected [" + tokens.asScala.mkString(",") + "] but got [" + tokensString + "]")
+if (tokens.asScala.mkString(",") != tokensString) throw new AssertionError("Expected [" + tokens.asScala.mkString(",") + "] but got [" +
+  tokensString + "]")
 //${TEMPLATE.PRE-PROCESSOR.CLOSE}
 
 /*
