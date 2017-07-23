@@ -35,11 +35,9 @@ ${TEMPLATE.PRE-PROCESSOR.UNCLOSE}
 
 package com.jag.maven.templater.example
 
-import java.util
-
 object Example {
 
-  def example(tokens: util.List[String]): String = {
+  def example(tokens: java.util.List[String]): String = {
 
 ${TEMPLATE.PRE-PROCESSOR.UNOPEN}
 */
@@ -58,7 +56,7 @@ TemplaterUtil.getDepJar(
 
 import java.io.StringReader
 
-import com.jag.maven.templater.example.ExampleUtil
+import com.jag.maven.templater.example.util.ExampleUtil
 import org.apache.commons.csv.CSVFormat
 
 import scala.collection.JavaConverters._
