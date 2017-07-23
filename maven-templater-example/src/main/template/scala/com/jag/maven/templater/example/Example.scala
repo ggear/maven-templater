@@ -40,29 +40,25 @@ object Example {
 ${TEMPLATE.PRE-PROCESSOR.UNOPEN}
 */
 
-import java.io.StringReader
-
 import com.jag.maven.templater.ScriptUtil
-import com.jag.maven.templater.example.ExampleUtil
-
-import scala.collection.JavaConverters._
-import scala.collection.mutable.ListBuffer
 
 //${TEMPLATE.PRE-PROCESSOR.OPEN}
 // Add dependencies dynamically
 //${TEMPLATE.PRE-PROCESSOR.ADDJAROPEN}
 ScriptUtil.getDepJar(
-  "com.jag.maven-templater",
-  "maven-templater-example",
-  "${project.version}",
-  "jar-with-dependencies",
+  "com.jag.maven-templater", "maven-templater-example", "${project.version}", "jar-with-dependencies",
   "http://52.63.86.162/artifactory/cloudera-framework-releases",
-  "http://52.63.86.162/artifactory/cloudera-framework-snapshots"
-)
+  "http://52.63.86.162/artifactory/cloudera-framework-snapshots")
 //${TEMPLATE.PRE-PROCESSOR.ADDJARCLOSE}
 //${TEMPLATE.PRE-PROCESSOR.CLOSE}
 
+import java.io.StringReader
+
+import com.jag.maven.templater.example.ExampleUtil
 import org.apache.commons.csv.CSVFormat
+
+import scala.collection.JavaConverters._
+import scala.collection.mutable.ListBuffer
 
 //${TEMPLATE.PRE-PROCESSOR.OPEN}
 // Provide example parameters

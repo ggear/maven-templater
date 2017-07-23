@@ -40,13 +40,7 @@ object Example {
 **IGNORE LIBRARY BOILERPLATE - FINISH**
 */
 
-import java.io.StringReader
-
 import com.jag.maven.templater.ScriptUtil
-import com.jag.maven.templater.example.ExampleUtil
-
-import scala.collection.JavaConverters._
-import scala.collection.mutable.ListBuffer
 
 //
 // Add dependencies dynamically
@@ -54,19 +48,21 @@ import scala.collection.mutable.ListBuffer
 //@formatter:off
 kernel.magics.addJar(
 ScriptUtil.getDepJar(
-  "com.jag.maven-templater",
-  "maven-templater-example",
-  "1.1.1-SNAPSHOT",
-  "jar-with-dependencies",
+  "com.jag.maven-templater", "maven-templater-example", "1.1.1-SNAPSHOT", "jar-with-dependencies",
   "http://52.63.86.162/artifactory/cloudera-framework-releases",
-  "http://52.63.86.162/artifactory/cloudera-framework-snapshots"
-)
+  "http://52.63.86.162/artifactory/cloudera-framework-snapshots")
 //
     + " -f")
 //@formatter:on
 //
 
+import java.io.StringReader
+
+import com.jag.maven.templater.example.ExampleUtil
 import org.apache.commons.csv.CSVFormat
+
+import scala.collection.JavaConverters._
+import scala.collection.mutable.ListBuffer
 
 //
 // Provide example parameters
