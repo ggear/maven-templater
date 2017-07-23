@@ -26,6 +26,10 @@ libraries) or check them in and note changes post Maven build (eg scripts)
 ${TEMPLATE.PRE-PROCESSOR.SPACER}
 */
 
+
+// Note that if the below URL includes a SNAPSHOT version, this file has not
+// been pre-processed from a RELEASE and the URL should be manually updated
+// to a SNAPSHOT, timestamped version
 /*
 %AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/${templater.version}/maven-templater-assembly-${templater.version}.jar
 */
