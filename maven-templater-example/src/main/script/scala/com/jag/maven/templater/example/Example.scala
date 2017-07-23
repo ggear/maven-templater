@@ -55,7 +55,7 @@ kernel.magics.addJar(
 ScriptUtil.getDepJar(
   "com.jag.maven-templater",
   "maven-templater-example",
-  "1.1.0",
+  "1.1.1-SNAPSHOT",
   "jar-with-dependencies",
   "http://52.63.86.162/artifactory/cloudera-framework-releases",
   "http://52.63.86.162/artifactory/cloudera-framework-snapshots"
