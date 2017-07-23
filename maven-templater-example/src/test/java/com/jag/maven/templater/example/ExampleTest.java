@@ -2,30 +2,31 @@ package com.jag.maven.templater.example;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
+import com.jag.maven.templater.ScriptUtil;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 public class ExampleTest {
 
+  private static final Logger LOG = Logger.getLogger(ExampleTest.class);
+
   @Test
-  public void testLibrary() {
+  public void testScalaLibrary() {
     assertEquals("1,2,3", Example.example(Arrays.asList("1", "2", "3")));
   }
 
   @Test
-  public void testScript() throws IOException, InterruptedException {
-    assertEquals(0, executeScript("src/main/script/scala/com/jag/maven/templater/example/Example.scala"));
-    assertEquals(0, executeScript("src/main/template/scala/com/jag/maven/templater/example/Example.scala"));
-  }
-
-  private int executeScript(String script) throws IOException, InterruptedException {
-    return new ProcessBuilder(Arrays.asList(
-      "scala",
-      "-cp",
-      System.getProperty("surefire.test.class.path") == null ? System.getProperty("java.class.path") : System.getProperty("java.class.path"), script)
-    ).start().waitFor();
+  public void testScalaScript() throws IOException, InterruptedException {
+    String file = "Example.scala";
+    String directory = "src/main/script/scala/com/jag/maven/templater/example";
+    StringBuffer output = new StringBuffer();
+    int exit = ScriptUtil.executeScriptScala(file, directory, "target/test-script/scala", output);
+    LOG.info("Executing [" + new File(directory,  file).toString() + "]:\n" + output.toString());
+    assertEquals(0, exit);
   }
 
 }

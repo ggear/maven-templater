@@ -5,7 +5,7 @@
     <groupId>com.jag.maven-templater</groupId>
     <artifactId>maven-templater-example</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.10-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
 
     <scm>
         <connection>scm:git:git@github.com:ggear/maven-templater.git</connection>
@@ -44,14 +44,14 @@
     </repositories>
 
     <properties>
-        <templater.version>${project.version}</templater.version>
+        <templater.version>1.1.0-SNAPSHOT</templater.version>
         <commonscsv.version>1.4</commonscsv.version>
+        <log4j.version>1.2.17</log4j.version>
         <junit.version>4.12</junit.version>
         <scala.minor.version>2.11</scala.minor.version>
         <scala.complete.version>${scala.minor.version}.8</scala.complete.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 
     <dependencies>
         <dependency>
@@ -81,6 +81,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
             <version>${commonscsv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

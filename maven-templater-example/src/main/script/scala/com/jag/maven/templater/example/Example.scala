@@ -23,7 +23,7 @@ The library can be tested during the standard maven compile and test phases.
 */
 
 /*
-%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.0.9-SNAPSHOT/maven-templater-assembly-1.0.9-SNAPSHOT.jar
+%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.1.0-SNAPSHOT/maven-templater-assembly-1.1.0-SNAPSHOT.jar
 */
 
 /*
@@ -40,13 +40,9 @@ object Example {
 **IGNORE LIBRARY BOILERPLATE - FINISH**
 */
 
-// TODO: Inject into target copy of script before execution
-object kernel { object magics { def addJar(dep:String): Unit = {} }}
-
 import java.io.StringReader
 
 import com.jag.maven.templater.ScriptUtil
-import org.apache.commons.csv.CSVFormat
 
 import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
@@ -59,7 +55,7 @@ kernel.magics.addJar(
 ScriptUtil.getDepJar(
   "com.jag.maven-templater",
   "maven-templater-example",
-  "1.0.9-SNAPSHOT",
+  "1.1.0-SNAPSHOT",
   "jar-with-dependencies",
   "http://52.63.86.162/artifactory/cloudera-framework-releases",
   "http://52.63.86.162/artifactory/cloudera-framework-snapshots"
@@ -67,7 +63,11 @@ ScriptUtil.getDepJar(
 //
     + " -f")
 //@formatter:on
+//
 
+import org.apache.commons.csv.CSVFormat
+
+//
 // Provide example parameters
 val tokens = new java.util.ArrayList[String]()
 tokens.add("1")

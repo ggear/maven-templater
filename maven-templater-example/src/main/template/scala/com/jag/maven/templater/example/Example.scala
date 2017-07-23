@@ -40,13 +40,9 @@ object Example {
 ${TEMPLATE.PRE-PROCESSOR.UNOPEN}
 */
 
-// TODO: Inject into target copy of script before execution
-object kernel { object magics { def addJar(dep:String): Unit = {} }}
-
 import java.io.StringReader
 
 import com.jag.maven.templater.ScriptUtil
-import org.apache.commons.csv.CSVFormat
 
 import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
@@ -63,7 +59,11 @@ ScriptUtil.getDepJar(
   "http://52.63.86.162/artifactory/cloudera-framework-snapshots"
 )
 //${TEMPLATE.PRE-PROCESSOR.ADDJARCLOSE}
+//${TEMPLATE.PRE-PROCESSOR.CLOSE}
 
+import org.apache.commons.csv.CSVFormat
+
+//${TEMPLATE.PRE-PROCESSOR.OPEN}
 // Provide example parameters
 val tokens = new java.util.ArrayList[String]()
 tokens.add("1")
