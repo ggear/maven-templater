@@ -5,13 +5,13 @@
     <groupId>com.jag.maven-templater</groupId>
     <artifactId>maven-templater-example</artifactId>
     <packaging>jar</packaging>
-    <version>1.2.3-SNAPSHOT</version>
+    <version>1.2.3</version>
 
     <scm>
         <connection>scm:git:git@github.com:ggear/maven-templater.git</connection>
         <url>scm:git:git@github.com:ggear/maven-templater.git</url>
         <developerConnection>scm:git:git@github.com:ggear/maven-templater.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>maven-templater-1.2.3</tag>
     </scm>
 
     <distributionManagement>
