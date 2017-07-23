@@ -31,10 +31,11 @@ libraries) or check them in and note changes post Maven build (eg scripts)
 // been pre-processed from a RELEASE and the URL should be manually updated
 // to a SNAPSHOT, timestamped version. If you are looking for an example, best
 // to checkout a release, https://github.com/ggear/maven-templater/releases
+// @formatter:off
 /*
-%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.2
-.4-SNAPSHOT/maven-templater-assembly-1.2.4-SNAPSHOT.jar
+%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.2.4-SNAPSHOT/maven-templater-assembly-1.2.4-SNAPSHOT.jar
 */
+// @formatter:on
 
 /*
 **IGNORE LIBRARY BOILERPLATE - START**

@@ -31,10 +31,11 @@ ${TEMPLATE.PRE-PROCESSOR.SPACER}
 // been pre-processed from a RELEASE and the URL should be manually updated
 // to a SNAPSHOT, timestamped version. If you are looking for an example, best
 // to checkout a release, https://github.com/ggear/maven-templater/releases
+// @formatter:off
 /*
-%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/${templater
-.version}/maven-templater-assembly-${templater.version}.jar
+%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/${templater.version}/maven-templater-assembly-${templater.version}.jar
 */
+// @formatter:on
 
 /*
 ${TEMPLATE.PRE-PROCESSOR.UNCLOSE}
