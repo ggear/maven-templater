@@ -23,7 +23,7 @@ The library can be tested during the standard maven compile and test phases.
 */
 
 /*
-%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.1.0-SNAPSHOT/maven-templater-assembly-1.1.0-SNAPSHOT.jar
+%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.1.0/maven-templater-assembly-1.1.0.jar
 */
 
 /*
