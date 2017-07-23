@@ -14,4 +14,3 @@ buildNumber.properties
 *.iml
 .pydevproject
 maven-templater-example/src/main/scala/*
-maven-templater-example/src/main/script/scala/*
