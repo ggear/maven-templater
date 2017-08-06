@@ -81,6 +81,9 @@ tokens.add("2")
 tokens.add("3")
 //
 
+//
+// Adding a silly comment on its own line
+
 /*
 ***
 A silly example that takes a Java List of Strings, forms a single CSV of them,
