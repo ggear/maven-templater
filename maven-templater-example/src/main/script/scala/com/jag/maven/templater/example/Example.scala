@@ -9,7 +9,8 @@ When editing the template directly (as indicated by the presence of the
 TEMPLATE.PRE-PROCESSOR.RAW_TEMPLATE tag at the top of this file), care should
 be taken to ensure the maven-resources-plugin generate-sources filtering of the
 TEMPLATE.PRE-PROCESSOR tags, which comment and or uncomment blocks of the
-template, leave the file in a consistent state, as a script ot library, post filtering.
+template, leave the file in a consistent state, as a script ot library,
+post filtering.
 
 It is desirable that in template form, the file remains both compilable and
 runnable as a script in your IDEs (eg Eclipse, IntelliJ, CDSW etc). To setup
@@ -33,7 +34,7 @@ libraries) or check them in and note changes post Maven build (eg scripts)
 // to checkout a release, https://github.com/ggear/maven-templater/releases
 // @formatter:off
 /*
-%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.2.4-SNAPSHOT/maven-templater-assembly-1.2.4-SNAPSHOT.jar
+%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.2.5-SNAPSHOT/maven-templater-assembly-1.2.5-SNAPSHOT.jar
 */
 // @formatter:on
 
@@ -57,7 +58,7 @@ import com.jag.maven.templater.TemplaterUtil
 //@formatter:off
 kernel.magics.addJar(
 TemplaterUtil.getDepJar(
-  "com.jag.maven-templater", "maven-templater-example", "1.2.4-SNAPSHOT", "jar-with-dependencies",
+  "com.jag.maven-templater", "maven-templater-example", "1.2.5-SNAPSHOT", "jar-with-dependencies",
   "http://52.63.86.162/artifactory/cloudera-framework-releases",
   "http://52.63.86.162/artifactory/cloudera-framework-snapshots")
 //
