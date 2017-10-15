@@ -141,7 +141,7 @@
                                 </resource>
                             </resources>
                             <filters>
-                                <filter>${project.build.directory}/templater-assembly/script.properties</filter>
+                                <filter>${project.build.directory}/templater-assembly/scala/script.properties</filter>
                             </filters>
                         </configuration>
                     </execution>
@@ -160,7 +160,7 @@
                                 </resource>
                             </resources>
                             <filters>
-                                <filter>${project.build.directory}/templater-assembly/library.properties</filter>
+                                <filter>${project.build.directory}/templater-assembly/scala/library.properties</filter>
                             </filters>
                         </configuration>
                     </execution>
