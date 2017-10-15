@@ -22,7 +22,7 @@ public class ExampleTest {
   @Test
   public void testScalaScript() throws IOException, InterruptedException {
     StringBuffer output = new StringBuffer();
-    int exit = TemplaterUtil.executeScriptScala(scala.Option.apply(null), new File
+    int exit = TemplaterUtil.executeScriptScala(scala.Option.apply(null), scala.Option.apply(null), new File
         ("src/main/script/scala/com/jag/maven/templater/example/Example.scala"),
       scala.Option.apply(null), new File("target/test-script/scala"), scala.Option.apply(null), scala.Option.apply(output));
     LOG.info(output.toString());

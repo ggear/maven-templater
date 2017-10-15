@@ -102,8 +102,8 @@ tokensString
 
 //
 // Test the result
-if (tokens.asScala.mkString(",") != tokensString) throw new AssertionError("Expected [" + tokens.asScala.mkString(",") + "] but got [" +
-  tokensString + "]")
+if (tokens.asScala.mkString(",") != tokensString) throw new AssertionError("Expected [" +
+  tokens.asScala.mkString(",") + "] but got [" + tokensString + "]")
 //
 
 /*
