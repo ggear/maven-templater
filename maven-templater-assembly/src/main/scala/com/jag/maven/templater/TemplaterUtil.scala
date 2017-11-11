@@ -26,24 +26,25 @@ object TemplaterUtil {
       (if (classifier == null || classifier == "") "" else "-" + classifier) + ".jar")
   }
 
-  def executeScriptScala(environment: Option[collection.Map[String, String]], virtualMachine: Option[String], file: File,
-                         parameters: Option[collection.Seq[String]], working: File, preamble: Option[String],
-                         output: Option[StringBuffer]): Int = {
+  def executeScriptScala(environment: Option[collection.Map[String, String]], environmentDrop: Option[collection.Seq[String]],
+                         virtualMachine: Option[String], file: File, parameters: Option[collection.Seq[String]], working: File,
+                         preamble: Option[String], output: Option[StringBuffer]): Int = {
     var classpath = if (System.getProperty("surefire.test.class.path") == null) System.getProperty("java.class.path") else System
       .getProperty("java.class.path")
     classpath = if (classpath != null) classpath.replace(" ", "\\ ") else ""
     executeScript(List(virtualMachine.getOrElse("scala"), "-cp", classpath, working.getAbsolutePath + File.separator + file.getName) ++
-      parameters.getOrElse(List.empty), environment, file, working, Some(PREAMBLE_SCALA + preamble.getOrElse("")), output)
+      parameters.getOrElse(List.empty), environment, environmentDrop, file, working, Some(PREAMBLE_SCALA + preamble.getOrElse("")), output)
   }
 
-  def executeScriptPython(environment: Option[collection.Map[String, String]], virtualMachine: Option[String], file: File,
-                          parameters: Option[collection.Seq[String]], working: File, preamble: Option[String],
-                          output: Option[StringBuffer]): Int = {
+  def executeScriptPython(environment: Option[collection.Map[String, String]], environmentDrop: Option[collection.Seq[String]],
+                          virtualMachine: Option[String], file: File, parameters: Option[collection.Seq[String]], working: File,
+                          preamble: Option[String], output: Option[StringBuffer]): Int = {
     executeScript(List(virtualMachine.getOrElse("scala"), working.getAbsolutePath + File.separator + file.getName) ++ parameters
-      .getOrElse(List.empty), environment, file, working, preamble, output)
+      .getOrElse(List.empty), environment, environmentDrop, file, working, preamble, output)
   }
 
-  def executeScript(command: collection.Seq[String], environment: Option[collection.Map[String, String]], file: File, working: File,
+  def executeScript(command: collection.Seq[String], environment: Option[collection.Map[String, String]],
+                    environmentDrop: Option[collection.Seq[String]], file: File, working: File,
                     preamble: Option[String], output: Option[StringBuffer]): Int = {
     delete(working)
     working.mkdirs()
@@ -59,6 +60,7 @@ object TemplaterUtil {
     if (!fileExecute.canExecute) fileExecute.setExecutable(true)
     val processBuilder = new ProcessBuilder(command.asJava).directory(working).redirectErrorStream(true)
     processBuilder.environment().putAll(environment.getOrElse(Map()).asJava)
+    for ((environmentVariable) <- environmentDrop.getOrElse(List())) processBuilder.environment().remove(environmentVariable)
     val process = processBuilder.start()
     process.getOutputStream.close()
     val exit = process.waitFor
