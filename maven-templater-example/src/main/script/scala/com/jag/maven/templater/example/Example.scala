@@ -34,7 +34,7 @@ libraries) or check them in and note changes post Maven build (eg scripts)
 // to checkout a release, https://github.com/ggear/maven-templater/releases
 // @formatter:off
 /*
-%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.2.8-SNAPSHOT/maven-templater-assembly-1.2.8-SNAPSHOT.jar
+%AddJar http://52.63.86.162/artifactory/cloudera-framework-releases/com/jag/maven-templater/maven-templater-assembly/1.2.9-SNAPSHOT/maven-templater-assembly-1.2.9-SNAPSHOT.jar
 */
 // @formatter:on
 
@@ -58,7 +58,7 @@ import com.jag.maven.templater.TemplaterUtil
 //@formatter:off
 kernel.magics.addJar(
 TemplaterUtil.getDepJar(
-  "com.jag.maven-templater", "maven-templater-example", "1.2.8-SNAPSHOT", "jar-with-dependencies",
+  "com.jag.maven-templater", "maven-templater-example", "1.2.9-SNAPSHOT", "jar-with-dependencies",
   "http://52.63.86.162/artifactory/cloudera-framework-releases",
   "http://52.63.86.162/artifactory/cloudera-framework-snapshots")
 //
