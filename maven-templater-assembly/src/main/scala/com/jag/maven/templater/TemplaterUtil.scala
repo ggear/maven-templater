@@ -39,7 +39,7 @@ object TemplaterUtil {
   def executeScriptPython(environment: Option[collection.Map[String, String]], environmentDrop: Option[collection.Seq[String]],
                           virtualMachine: Option[String], file: File, parameters: Option[collection.Seq[String]], working: File,
                           preamble: Option[String], output: Option[StringBuffer]): Int = {
-    executeScript(List(virtualMachine.getOrElse("scala"), working.getAbsolutePath + File.separator + file.getName) ++ parameters
+    executeScript(List(virtualMachine.getOrElse("python"), working.getAbsolutePath + File.separator + file.getName) ++ parameters
       .getOrElse(List.empty), environment, environmentDrop, file, working, preamble, output)
   }
 

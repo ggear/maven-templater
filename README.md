@@ -20,8 +20,8 @@ To perform a release:
 
 ```bash
 # Change the following variables to appropriate values for your target release
-export MT_VERSION_RELEASE=1.2.8
-export MT_VERSION_HEAD=1.2.9
+export MT_VERSION_RELEASE=1.2.9
+export MT_VERSION_HEAD=1.3.0
 mvn release:prepare -B -DreleaseVersion=$MT_VERSION_RELEASE -DdevelopmentVersion=$MT_VERSION_HEAD-SNAPSHOT && \
 mvn release:perform && \
 mvn clean install && \
