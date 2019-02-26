@@ -34,7 +34,7 @@ libraries) or check them in and note changes post Maven build (eg scripts)
 // to checkout a release, https://github.com/ggear/maven-templater/releases
 // @formatter:off
 /*
-%AddJar http://macmini-sheryl:8071/artifactory/libs-release-local/com/jag/maven-templater/maven-templater-assembly/1.3.1-SNAPSHOT/maven-templater-assembly-1.3.1-SNAPSHOT.jar
+%AddJar http://macmini-delila:8071/artifactory/libs-release-local/com/jag/maven-templater/maven-templater-assembly/1.3.1-SNAPSHOT/maven-templater-assembly-1.3.1-SNAPSHOT.jar
 */
 // @formatter:on
 
@@ -59,8 +59,8 @@ import com.jag.maven.templater.TemplaterUtil
 kernel.magics.addJar(
 TemplaterUtil.getDepJar(
   "com.jag.maven-templater", "maven-templater-example", "1.3.1-SNAPSHOT", "jar-with-dependencies",
-  "http://macmini-sheryl:8071/artifactory/libs-release-local",
-  "http://macmini-sheryl:8071/artifactory/libs-snapshot-local")
+  "http://macmini-delila:8071/artifactory/libs-release-local",
+  "http://macmini-delila:8071/artifactory/libs-snapshot-local")
 //
     + " -f")
 //@formatter:on
